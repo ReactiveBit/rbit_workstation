@@ -1,0 +1,77 @@
+cookbook_paths:
+  - site-cookbooks
+
+recipes:
+  - apt
+  - git::source
+  - java
+
+  - mysql::server
+  - mysql::client
+  - postgresql::server
+  - postgresql::libpq
+
+  - rbit_workstation::packages
+  - rbit_workstation::mc
+  - rbit_workstation::intellij
+  - rubymine
+  - rbit_workstation::opera
+  - google-chrome
+
+
+# Attributes for node
+node_attributes:
+
+  # Git attributes
+  git:
+    version: '1.8.5.3'
+
+  # Java attributes
+  java:
+    install_flavor: 'oracle'
+    jdk_version: '7'
+    oracle:
+      accept_oracle_download_terms: true
+
+  mysql:
+    remove_anonymous_users: true
+    server_root_password: "debug"
+    server_repl_password: "debug"
+    server_debian_password: "debug"
+
+  postgresql:
+    version: '9.3'
+    initdb_options: '--locale=en_US.UTF-8'
+    apt_distribution: "precise"
+    password:
+      postgres: 'debug'
+
+    users:
+      - username: 'dev'
+        password: 'dev'
+        superuser: true
+        createdb: true
+        login: true
+
+    # Required to allow connections
+    pg_hba:
+      - type: 'local'
+        db: 'all'
+        user: 'postgres'
+        addr: ''
+        method: 'trust'
+      - type: 'host'
+        db: 'all'
+        user: 'all'
+        addr: '127.0.0.1/32'
+        method: 'trust'
+      - type: 'host'
+        db: 'all'
+        user: 'all'
+        addr: '::1/128'
+        method: 'trust'
+
+  # RubyMine settings
+  rubymine:
+    version: '6.0.2'
+    directory: 'RubyMine-6.0.2'
