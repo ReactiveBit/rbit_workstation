@@ -11,6 +11,8 @@ recipes:
   - postgresql::server
   - postgresql::libpq
 
+  - nodejs
+
   - rbit_workstation::packages
   - rbit_workstation::mc
   - rbit_workstation::intellij

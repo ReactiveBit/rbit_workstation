@@ -10,6 +10,8 @@ cookbook 'mysql'
 #  git: 'https://github.com/phlipper/chef-postgresql.git',
 #  ref: '0.13.0'
 
+cookbook 'nodejs'
+
 cookbook 'postgresql',
   git: 'https://github.com/basgren/chef-postgresql.git',
   ref: 'linux-mint-support'
