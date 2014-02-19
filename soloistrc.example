@@ -20,6 +20,7 @@ recipes:
   - rubymine
   - rbit_workstation::opera
   - google-chrome
+  - rbit_workstation::pac_manager
 
 
 # Attributes for node
