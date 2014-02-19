@@ -8,6 +8,7 @@ recipes:
 
   - mysql::server
   - mysql::client
+  - rbit_workstation::mysql_workbench
   - postgresql::server
   - postgresql::libpq
 
