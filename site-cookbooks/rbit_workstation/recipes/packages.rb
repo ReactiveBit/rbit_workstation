@@ -6,5 +6,5 @@ package 'mysql-workbench' do
 end
 
 package 'pgadmin3'
-
 package 'skype'
+package 'htop'
