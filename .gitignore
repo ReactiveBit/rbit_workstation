@@ -2,3 +2,7 @@ cookbooks/*
 soloistrc
 .idea/*
 tmp/*
+.ruby-*
+
+# Atlassian connector file
+atlassian-ide-plugin.xml
